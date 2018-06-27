@@ -7,7 +7,6 @@ typedef struct nodo {
     struct nodo *p;
     struct nodo *esq;
     struct nodo *dir;
-    int alt;
 }Nodo;
 typedef struct arv_rb {
     Nodo* raiz;
@@ -18,7 +17,6 @@ Arv_rb* nova_arv_rb(Arv_rb* T);
 Nodo* novo_nodo(Arv_rb* T,Nodo* z,Nodo* p,int v);
 void left_rotate(Arv_rb * T, Nodo* x);
 void right_rotate(Arv_rb * T, Nodo* x);
-void arv_rb_insert(Arv_rb * T, Nodo* z);
 void arv_rb_fix_up_insert(Arv_rb * T, Nodo* z);
 void remover_arv(Arv_rb* T);
 void remover_nodos(Arv_rb* T,Nodo* z);
