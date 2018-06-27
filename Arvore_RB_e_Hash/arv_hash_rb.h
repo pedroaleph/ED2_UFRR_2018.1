@@ -9,4 +9,5 @@ typedef struct arv_hash{
 void inicializa(Arv_hash* h[],int n);
 void insere_k(Arv_hash* h,int k);
 void remover_hash(Arv_hash* h[],int n);
+void print_hash(Arv_hash* h[],int n);
 #endif
