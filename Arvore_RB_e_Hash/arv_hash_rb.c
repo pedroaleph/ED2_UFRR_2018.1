@@ -23,7 +23,7 @@ void remover_hash_nodo(Arv_hash* h[],int n,int k){
     int hk = mod(k,n);
     for(i=0;i<n;i++){
         if(i==hk){
-            remover_nodo(h[i]->T,h[i]->T->raiz,h[i]->T->NIL,k);
+            h[i]->T->raiz = remover_nodo(h[i]->T,h[i]->T->raiz,h[i]->T->NIL,k);
             break;
         }
     }
