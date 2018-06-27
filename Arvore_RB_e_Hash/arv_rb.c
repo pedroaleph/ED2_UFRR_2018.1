@@ -99,6 +99,111 @@ void left_rotate(Arv_rb* T,Nodo* z){
     y->dir = z;
     z->p = y;
 }
+Nodo* remover_nodo(Arv_rb * T, Nodo* z,Nodo* p,int v){
+    if(v == z->info){
+        Nodo* aux = z;
+        if(z->esq == T->NIL && z->dir == T->NIL){
+            z = p;
+            free(aux);
+        }
+        else {
+            int i = z->info;
+            if(z->esq != T->NIL && z->dir != T->NIL){
+                if(v<p->info){
+                    while(aux->dir!=T->NIL)
+                        aux = aux->dir;
+                    z->info = aux->info;
+                    aux->info = i;
+                    remover_nodo(T,aux,aux->p,i);
+                }
+                else{
+                    while(aux->esq!=T->NIL)
+                        aux = aux->esq;
+                    z->info = aux->info;
+                    aux->info = i;
+                    remover_nodo(T,aux,aux->p,i);
+                }
+            }
+            else {
+                if(z->esq != T->NIL && z->dir == T->NIL){
+                    z->info = z->esq->info;
+                    z->esq->info = i;
+                    remover_nodo(T,z->esq,z,i);
+                }
+                else{
+                    z->info = z->dir->info;
+                    z->dir->info = i;
+                    remover_nodo(T,z->dir,z,i);
+                }
+            }
+        }
+
+    }
+    else{
+        if(v<z->info)
+            remover_nodo(T,z->esq,z,v);
+        else
+            remover_nodo(T,z->dir,z,v);
+    }
+    arv_rb_fix_up_delete(T,z);
+    return z;
+}
+void arv_rb_fix_up_delete(Arv_rb * T, Nodo* z){
+    while(z!=T->raiz && z->color == BLACK){
+        if(z==z->p->esq){
+            Nodo* w = z->p->dir;
+            if(w->color == RED){
+                w->color = BLACK;
+                z->p->color = RED;
+                left_rotate(T,z->p);
+                w = z->p->dir;
+            }
+            if(w->esq->color == BLACK && w->dir->color == BLACK){
+                w->color = RED;
+                z = z->p;
+            }
+            else{
+                if(w->dir->color == BLACK){
+                    w->esq->color = BLACK;
+                    w->color = RED;
+                    right_rotate(T,w);
+                    w = z->p->dir;
+                }
+                w->color = z->p->color;
+                z->p->color = BLACK;
+                left_rotate(T,z->p);
+                z = T->raiz;
+            }
+        }
+        else if(z==z->p->dir){
+            Nodo* w = z->p->esq;
+            if(w->color == RED){
+                w->color = BLACK;
+                z->p->color = RED;
+                right_rotate(T,z->p);
+                w = z->p->esq;
+            }
+            if(w->esq->color == BLACK && w->dir->color == BLACK){
+                w->color = RED;
+                z = z->p;
+            }
+            else{
+                if(w->esq->color == BLACK){
+                    w->dir->color = BLACK;
+                    w->color = RED;
+                    left_rotate(T,w);
+                    w = z->p->esq;
+                }
+                w->color = z->p->color;
+                z->p->color = BLACK;
+                right_rotate(T,z->p);
+                z = T->raiz;
+            }
+
+        }
+    }
+    z->color  = BLACK;
+}
 void remover_arv(Arv_rb* T){
     remover_nodos(T,T->raiz);
 }

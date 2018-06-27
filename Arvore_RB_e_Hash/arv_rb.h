@@ -18,6 +18,8 @@ Nodo* novo_nodo(Arv_rb* T,Nodo* z,Nodo* p,int v);
 void left_rotate(Arv_rb * T, Nodo* x);
 void right_rotate(Arv_rb * T, Nodo* x);
 void arv_rb_fix_up_insert(Arv_rb * T, Nodo* z);
+Nodo* remover_nodo(Arv_rb * T, Nodo* z,Nodo* p,int v);
+void arv_rb_fix_up_delete(Arv_rb * T, Nodo* z);
 void remover_arv(Arv_rb* T);
 void remover_nodos(Arv_rb* T,Nodo* z);
 #endif

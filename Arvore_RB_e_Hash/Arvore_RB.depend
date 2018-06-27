@@ -23,24 +23,23 @@
 	<stdlib.h>
 	"arv_hash_rb.h"
 
-1530029777 c:\users\pedroaleph\downloads\aulas\ed2_ufrr_2018.1\arvore_rb_e_hash\arv_hash_rb.h
+1530071913 c:\users\pedroaleph\downloads\aulas\ed2_ufrr_2018.1\arvore_rb_e_hash\arv_hash_rb.h
 	"arv_rb.h"
 
-<<<<<<< HEAD
-1530067705 c:\users\pedroaleph\downloads\aulas\ed2_ufrr_2018.1\arvore_rb_e_hash\arv_rb.h
-=======
-1530067218 c:\users\pedroaleph\downloads\aulas\ed2_ufrr_2018.1\arvore_rb_e_hash\arv_rb.h
->>>>>>> master
+1446667744 D
+
+1530071956 c:\users\pedroaleph\downloads\aulas\ed2_ufrr_2018.1\arvore_rb_e_hash\arv_rb.h
+
+1530065287 ter
+	<stdio.h>
+	<stdlib.h>
+	"arv_rb.h"
 
 1446667744 source:c:\users\pedroaleph\downloads\aulas\ed2_ufrr_2018.1\arvore_rb_e_hash\main.c
 	<stdio.h>
 	<stdlib.h>
 
-<<<<<<< HEAD
-1530067337 source:c:\users\pedroaleph\downloads\aulas\ed2_ufrr_2018.1\arvore_rb_e_hash\arv_rb.c
-=======
-1530065287 source:c:\users\pedroaleph\downloads\aulas\ed2_ufrr_2018.1\arvore_rb_e_hash\arv_rb.c
->>>>>>> master
+1530076308 source:c:\users\pedroaleph\downloads\aulas\ed2_ufrr_2018.1\arvore_rb_e_hash\arv_rb.c
 	<stdio.h>
 	<stdlib.h>
 	"arv_rb.h"
